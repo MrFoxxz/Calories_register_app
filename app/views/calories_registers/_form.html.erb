@@ -1,0 +1,31 @@
+<div class="form_container">
+    <h2 class="titles">Nuevo Registro</h2>  
+    <%= form_with(model: @calories_register) do |form| %>
+        
+        <div class="field">
+        <%= form.label "Actividad Realizada", class: 'label' %>
+            <%= form.select :calories_action, [['Perdí Calorías'], ['Gane Calorías']],{include_blank: 'Actividad'},  {class:"select is-rounded"} %>
+        </div>
+
+        <div class="field">
+            <%= form.label "Numero de Calorías", class: 'label' %>
+            <%= form.text_field :calories, class: 'input', required: true, placeholder: 'Cantidad de Calorías (cal)' %>
+         </div>
+
+        <div class="field">
+            <%= form.label "Descripción", class:"label"%>
+            <%= form.text_area :description, class:"input", required: true, placeholder: "Descripción..." %>
+        </div>
+
+        <div class="field">
+            <%= form.label "Fecha", class: 'label' %>
+            <%= form.date_select :date, class: 'input', required: true %>
+        </div>
+
+        <div class="actions">
+            <div class="control">
+                <%= form.submit "Registrar", class:"button is-link" %>
+            </div>
+        </div>
+    <% end %>
+</div>

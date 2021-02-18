@@ -18,12 +18,18 @@ class CaloriesRegistersController < ApplicationController
             flash[:success] = 'Tus actividades ha sido registradas con exito!'
             redirect_to calories_registers_path
         else
-            flash.now[:danger] = 'Informacion invalida'
+            flash[:danger] = 'Informacion invalida'
             redirect_to new_calories_register_path
         end
     end
 
-    private
+    def destroy
+        current_user.calories_registers.find(params[:id]).destroy
+        flash[:info] = 'Registro borrado'
+        redirect_to calories_registers_path
+    end
+
+    private #------------------------------------------------------------------------------------------
 
     def calories_register_params
         params.require(:calories_register).permit(:calories, :description, :calories_action, :date)

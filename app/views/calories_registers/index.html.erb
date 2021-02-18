@@ -16,6 +16,15 @@
                     <td><%= calories_register.calories %></td>
                     <td><%= calories_register.calories_action %></td>
                     <td><%= calories_register.date %></td>
+
+                    <td>
+                        <%= link_to calories_register, placeholder:"x", method: :delete, data: {confirm: 'Estas seguro de borrar estos datos?'}, class:"button is-danger" do %>
+                            <span>Eliminar</span>
+                            <span class="icon is-small">
+                                <i class="fas fa-times"></i>
+                            </span>
+                        <% end %>
+                    </td>
                 </tr>
             <% end %>
     </tbody>

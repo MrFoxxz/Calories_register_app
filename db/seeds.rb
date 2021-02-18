@@ -5,3 +5,13 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+10.times do
+    CaloriesRegister.create(
+        calories: Faker::Number.number(digits: 3),
+        description: Faker::ChuckNorris.fact,
+        calories_action: Faker::Alphanumeric.alpha(number: 5),
+        date: Faker::Date.between(from: 30.days.ago, to: Date.today),
+        user_id: "3"
+    )
+end

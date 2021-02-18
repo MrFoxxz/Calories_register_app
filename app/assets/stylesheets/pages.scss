@@ -1,9 +1,32 @@
+.homepage{
+    background-image: url("https://cdn.discordapp.com/attachments/753405887032328314/811999914368041020/Fruit_Apples_Grapes_488094.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    
+}
+
 .form_container{
     display: flex;
     flex-direction: column;
     width: 24em;
     margin-left: auto;
     margin-right: auto;
+
+    .table{
+        width: 35em;
+    align-self: center;
+    }
+
+    .titles{
+        font-size: xx-large;
+        font-weight: inherit;
+        margin-bottom: 1em;
+    }
 }
 
 .titles{

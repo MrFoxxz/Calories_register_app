@@ -1,21 +1,24 @@
-<h1>Your Calories Registers</h1>
-<table class="table">
-  <thead>
-    <tr>
-      <th>Actividad Realizada</th>
-      <th>Calorías</th>
-      <th>Descripción</th>
-      <th>Fecha</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @calories_registers.each do |calories_register| %>
-      <tr>
-        <td><%= calories_register.description %></td>
-        <td><%= calories_register.quantity %></td>
-        <td><%= regicalories_registerster.activityType %></td>
-        <td><%= calories_register.date %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table
+<div class="form_container">
+    <h2 class="titles">Tu registro de calorias</h2>  
+    <table class="table is-striped">
+    <thead>
+            <tr>
+                <th>Actividad Realizada</th>
+                <th>Calorías</th>
+                <th>Descripción</th>
+                <th>Fecha</th>
+            </tr>
+    </thead>
+    <tbody>
+            <% @calories_registers.each do |calories_register| %>
+                <tr>
+                    <td><%= calories_register.description %></td>
+                    <td><%= calories_register.calories %></td>
+                    <td><%= calories_register.calories_action %></td>
+                    <td><%= calories_register.date %></td>
+                </tr>
+            <% end %>
+    </tbody>
+    </table
+    <%= paginate @calories_registers %>
+</div>

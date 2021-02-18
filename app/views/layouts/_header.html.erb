@@ -38,6 +38,25 @@
         </div>
       </div>
 
+      <% unless current_user.blank? %>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Medidor de caloria
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              <%= link_to 'Nuevo Registro', new_calories_register_url, class:"navbar-item" %>
+            </a>
+            <a class="navbar-item">
+              <%= link_to 'Registros', calories_registers_url, class:"navbar-item" %>
+            </a>
+            <a class="navbar-item">
+              Grafica
+            </a>
+          </div>
+      </div>
+      <% end %>
+
     </div>
 
     

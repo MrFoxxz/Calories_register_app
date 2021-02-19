@@ -1,0 +1,16 @@
+5.times do
+    User.create(
+        email: Faker::Number.number(digits: 3),
+        password: Faker::Internet.email
+    )
+end
+
+10.times do
+    CaloriesRegister.create(
+        calories: Faker::Number.number(digits: 3),
+        description: Faker::Food.fruits,
+        calories_action: Faker::Boolean.boolean,
+        date: Faker::Date.between(from: 30.days.ago, to: Date.today),
+        user_id: "1"
+    )
+end

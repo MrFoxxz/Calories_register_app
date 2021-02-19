@@ -8,14 +8,16 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 
   <body>
     <%= render 'layouts/header' %>
     
     <% flash.each do |message_type, message| %>
-      <div class="notification is-<%= message_type %>">
+      <div class="notification is-<%= message_type %>" style="margin-bottom: 0px;">
         <%=message%>
       </div>
     <% end %>

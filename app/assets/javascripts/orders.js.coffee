@@ -1,4 +1,4 @@
-JQuery ->
+### JQuery ->
 new Morris.Line({
   // ID of the element in which to draw the chart.
   element: 'myfirstchart',
@@ -18,4 +18,4 @@ new Morris.Line({
   // Labels for the ykeys -- will be displayed when you hover over the
   // chart.
   labels: ['Value']
-});
+}); ###

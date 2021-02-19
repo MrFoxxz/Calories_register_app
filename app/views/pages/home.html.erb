@@ -4,6 +4,9 @@
         <% unless current_user.blank? %>
             <h1 class="tittles">
                 Bienvenido a tu registro de calorías!
+                <div class="buttons">                
+                <%= link_to 'Ver mi registro', calories_registers_url, class:"button is-info"  %>   
+            </div>
             </h1>
         <% else %>
             <h1 class="tittles">

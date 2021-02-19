@@ -14,14 +14,17 @@
   </head>
 
   <body>
+    <div>
     <%= render 'layouts/header' %>
-    
-    <% flash.each do |message_type, message| %>
-      <div class="notification is-<%= message_type %>" style="margin-bottom: 0px;">
-        <%=message%>
-      </div>
-    <% end %>
-        
-    <%= yield %>
+    </div>
+
+    <div>
+      <% flash.each do |message_type, message| %>
+        <div class="notification is-<%= message_type %>" style="margin-bottom: 0px;">
+          <%=message%>
+        </div>
+      <% end %>   
+      <%= yield %>
+    </div>
   </body>
 </html>

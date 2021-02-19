@@ -6,10 +6,11 @@ class CaloriesRegistersController < ApplicationController
     end
 
     def show
+        @register = current_user.calories_registers.find(params[:id])
     end
 
     def index
-        @calories_registers = current_user.calories_registers.page params[:page]
+        @calories_registers = current_user.calories_registers.page(params[:page])
     end
 
     def create
@@ -18,8 +19,8 @@ class CaloriesRegistersController < ApplicationController
             flash[:success] = 'Tus actividades ha sido registradas con exito!'
             redirect_to calories_registers_path
         else
-            flash[:danger] = 'Informacion invalida'
-            redirect_to new_calories_register_path
+            flash.now[:danger] = 'Informacion invalida'
+            render new_calories_register_path
         end
     end
 
@@ -28,6 +29,20 @@ class CaloriesRegistersController < ApplicationController
         flash[:info] = 'Registro borrado'
         redirect_to calories_registers_path
     end
+
+    def edit
+        @calories_register = current_user.calories_registers.find(params[:id])
+    end
+
+    def update
+        @calories_register = CaloriesRegister.find(params[:id])
+        if @calories_register.update(calories_register_params)
+         flash[:success] = 'Registro actualizado'
+         redirect_to calories_registers_path
+        else
+         render edit
+        end
+       end
 
     private #------------------------------------------------------------------------------------------
 

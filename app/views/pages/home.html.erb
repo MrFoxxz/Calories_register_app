@@ -1,5 +1,20 @@
+
 <div class="homepage">
     <div class="hometittle">
-        <h1 class="tittles">Registro de calorias</h1>
+        <% unless current_user.blank? %>
+            <h1 class="tittles">
+                Bienvenido a tu registro de calorías!
+            </h1>
+        <% else %>
+            <h1 class="tittles">
+                Bienvenido a registro de calorías!
+            </h1>
+            <p>
+                Te invitamos a registrarte y lleva un registro completo de tus calorías
+            </p>
+            <div class="buttons">                
+                <%= link_to 'Registrate', new_user_registration_path, class:"button is-info"  %>   
+            </div>
+        <% end %>
     </div>
 </div>

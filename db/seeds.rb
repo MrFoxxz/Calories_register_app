@@ -22,7 +22,7 @@
         else
             calories_action = 'Gane Calorías'
         end
-        calories = rand(500..1000)
+        calories = rand(100..1000)
 
         CaloriesRegister.create!(
             calories_action: calories_action,
